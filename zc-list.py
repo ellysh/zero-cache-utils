@@ -4,6 +4,18 @@ import sys
 import argparse
 import client_wrap
 
+READ_FUNCTIONS = {
+    'double' : client_wrap.ClientWrap.ReadDouble,
+    'long' : client_wrap.ClientWrap.ReadLong,
+    'string' : client_wrap.ClientWrap.ReadString
+}
+
+PRINT_FORMATS = {
+    'double' : "%s = %f",
+    'long' : "%s = %d",
+    'string' : "%s = %s",
+}
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--type", help="type of the cached data", default="double")
@@ -24,24 +36,10 @@ def get_keys(client):
     return keys
 
 def read_value(client, key):
-    if ARGS.type == "double":
-        return client.ReadDouble(key)
-
-    if ARGS.type == "long":
-        return client.ReadLong(key)
-
-    if ARGS.type == "string":
-        return client.ReadString(key)
+    return READ_FUNCTIONS[ARGS.type](client, key)
 
 def print_value(key, value):
-    if ARGS.type == "double":
-        print "%s = %f" % (key, value)
-
-    if ARGS.type == "long":
-        print "%s = %d" % (key, value)
-
-    if ARGS.type == "string":
-        print "%s = %s" % (key, value)
+    print PRINT_FORMATS[ARGS.type] % (key, value)
 
 def print_keys(client, keys):
     for key in keys:
