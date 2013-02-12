@@ -39,12 +39,17 @@ def read_value(client, key):
     return READ_FUNCTIONS[ARGS.type](client, key)
 
 def print_value(key, value):
-    print PRINT_FORMATS[ARGS.type] % (key, value)
+    print(PRINT_FORMATS[ARGS.type] % (key, value)),
 
 def print_keys(client, keys):
+    index = 0
     for key in keys:
         value = read_value(client, key)
         print_value(key, value)
+        index += 1
+        if index == ARGS.column:
+            index = 0
+            print("")
 
 def main():
     parse_args()
