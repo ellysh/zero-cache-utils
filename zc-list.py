@@ -48,7 +48,7 @@ def print_keys(client, keys):
 
 def main():
     parse_args()
-    client = client_wrap.ClientWrap("get_test.log", "ipc:///var/run/zero-cache/0", 0)
+    client = client_wrap.ClientWrap(ARGS.log, ARGS.connection, 0)
     keys = get_keys(client)
     print_keys(client, keys)
 
