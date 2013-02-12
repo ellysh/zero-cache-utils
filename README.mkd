@@ -9,8 +9,8 @@ Zero-cache-utils is a package of utilities for the zero-cache caching system.
 USAGE
 -----
 
-zc-list.py - this is utility to get all available keys and their values from the cache
-zc-set.py - this is utility to set new value for the specified key in the cache
+**zc-list.py** - this is utility to get all available keys and their values from the cache<br/>
+**zc-set.py** - this is utility to set new value for the specified key in the cache
 
 This is example of usage zc-list.py script:
 
