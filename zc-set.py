@@ -11,7 +11,7 @@ WRITE_FUNCTIONS = {
 }
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Utility to set new value for the specified key in the cache")
+    parser = argparse.ArgumentParser(description="This is utility to set new value for the specified key in the cache")
     parser.add_argument("-t", "--type", help="type of the cached data", default="double", choices=('double', 'long', 'string'))
     parser.add_argument("-c", "--connection", help="connection string", default="ipc:///var/run/zero-cache/0")
     parser.add_argument("-k", "--key", help="key string", required=True)

@@ -11,7 +11,7 @@ READ_FUNCTIONS = {
 }
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Utility to get all available keys and their values from the cache")
+    parser = argparse.ArgumentParser(description="This is utility to get all available keys and their values from the cache")
     parser.add_argument("-t", "--type", help="type of the cached data", default="double", choices=('double', 'long', 'string'))
     parser.add_argument("-c", "--connection", help="connection string", default="ipc:///var/run/zero-cache/0")
     parser.add_argument("-w", "--column", help="number of columns", type=int, default=1)
