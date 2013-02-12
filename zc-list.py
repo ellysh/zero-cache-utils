@@ -10,7 +10,8 @@ def parse_args():
     parser.add_argument("-c", "--connection", help="connection string", default="ipc:///var/run/zero-cache/0")
     parser.add_argument("-w", "--column", help="number of columns", type=int, default=1)
     parser.add_argument("-l", "--log", help="log file name", default="")
-    args = parser.parse_args()
+    global ARGS
+    ARGS = parser.parse_args()
 
 def get_keys(client):
     key_str = client.GetKeys()
@@ -22,10 +23,30 @@ def get_keys(client):
 
     return keys
 
+def read_value(client, key):
+    if ARGS.type == "double":
+        return client.ReadDouble(key)
+
+    if ARGS.type == "long":
+        return client.ReadLong(key)
+
+    if ARGS.type == "string":
+        return client.ReadString(key)
+
+def print_value(key, value):
+    if ARGS.type == "double":
+        print "%s = %f" % (key, value)
+
+    if ARGS.type == "long":
+        print "%s = %d" % (key, value)
+
+    if ARGS.type == "string":
+        print "%s = %s" % (key, value)
+
 def print_keys(client, keys):
     for key in keys:
-        value = client.ReadLong(key)
-        print "%s = %d" % (key, value)
+        value = read_value(client, key)
+        print_value(key, value)
 
 def main():
     parse_args()
