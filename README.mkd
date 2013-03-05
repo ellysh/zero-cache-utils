@@ -1,4 +1,4 @@
-Zero-cache-utils 0.1 version
+Zero-cache-utils 2.0 version
 ============================
 
 INTRODUCTION
@@ -6,25 +6,26 @@ INTRODUCTION
 
 Zero-cache-utils is a package of utilities for the zero-cache caching system.
 
+INSTALLING
+----------
+
+You need the Python binding for zero-cache system to use this software.<br/>
+This is link to download the binding:<br/>
+https://github.com/ellysh/python-zero-cache
+
 USAGE
 -----
 
-**zc-list.py** - this is utility to get all available keys and their values from the cache<br/>
-**zc-set.py** - this is utility to set new value for the specified key in the cache
+**zc-list.py** - this is utility to print values specified by index from the cache<br/>
+**zc-set.py** - this is utility to set new value for the specified index in the cache
 
-This is example of usage zc-list.py script:
+This is example to print first 50 values of `long` type from the cache with `zc-list.py` utility:
 
-    $ ./zc-list.py -c ipc:///var/run/zero-cache/0 -t string -w 3 -k 3 -v 5
-    1   = 1     10  = 10    11  = 11
-    12  = 12    13  = 13    14  = 14
-    15  = 15    16  = 16    2   = 2
-    3   = 3     4   = 4     5   = 5
-    6   = 6     7   = 7     8   = 8
-    9   = 9
+    $ ./zc-list.py -t long
 
-This is example of usage zc-set.py script:
+This is example to set value 5 for 3rd index in the cache with `zc-set.py` utility:
 
-    $ ./zc-set.py -c ipc:///var/run/zero-cache/0 -k key1 -v "test data" -t string
+    $ ./zc-set.py -t long -i 3 -v 5
 
 
 COPYING
