@@ -1,0 +1,2 @@
+debian/buildroot/usr/lib/python2.7/*                    usr/lib/python2.7
+debian/buildroot/usr/lib/python2.7/lib-dynload/*        usr/lib/python2.7/lib-dynload

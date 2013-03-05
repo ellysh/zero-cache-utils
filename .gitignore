@@ -1,2 +1,13 @@
 *.py~
 *.pyc
+*.1
+*.log
+deb/
+*-stamp
+*.substvars
+*.debhelper
+
+debian/buildroot
+debian/files
+debian/zero-cache-utils/
+
