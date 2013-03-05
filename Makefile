@@ -1,6 +1,10 @@
 INSTALL_BIN_DIR = usr/bin
 UTILS = zc-list zc-set
 
+.PHONY: deb install all
+
+all:
+
 install:
 	mkdir -p $(DESTDIR)/$(INSTALL_BIN_DIR)
 	cp $(UTILS) $(DESTDIR)/$(INSTALL_BIN_DIR)
