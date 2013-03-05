@@ -16,16 +16,16 @@ https://github.com/ellysh/python-zero-cache
 USAGE
 -----
 
-**zc-list.py** - this is utility to print values specified by index from the cache<br/>
-**zc-set.py** - this is utility to set new value for the specified index in the cache
+**zc-list** - this is utility to print values specified by index from the cache<br/>
+**zc-set** - this is utility to set new value for the specified index in the cache
 
-This is example to print first 50 values of `long` type from the cache with `zc-list.py` utility:
+This is example to print first 50 values of `long` type from the cache with `zc-list` utility:
 
-    $ ./zc-list.py -t long
+    $ ./zc-list -t long
 
-This is example to set value 5 for 3rd index in the cache with `zc-set.py` utility:
+This is example to set value 5 for 3rd index in the cache with `zc-set` utility:
 
-    $ ./zc-set.py -t long -i 3 -v 5
+    $ ./zc-set -t long -i 3 -v 5
 
 
 COPYING
