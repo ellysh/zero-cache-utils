@@ -1,2 +1,6 @@
+* zero-cache-utils 2.0
+	- Fixes according to zero-cache 2.0 API
+	- Implement debian packaging
+
 * zero-cache-utils 0.1
 	- Base functional implementation
