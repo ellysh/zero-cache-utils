@@ -5,8 +5,8 @@ import argparse
 import zero_cache
 
 READ_FUNCTIONS = {
-    'double' : zero_cache.Client.ReadDouble,
-    'long' : zero_cache.Client.ReadLong
+    'double' : zero_cache.TypedClient.ReadDouble,
+    'long' : zero_cache.TypedClient.ReadLong
 }
 
 def parse_args():
@@ -46,7 +46,7 @@ def print_cache(client):
 
 def main():
     parse_args()
-    client = zero_cache.Client(ARGS.log)
+    client = zero_cache.TypedClient(ARGS.log)
     print_cache(client)
 
 if __name__ == "__main__":

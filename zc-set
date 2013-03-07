@@ -5,8 +5,8 @@ import argparse
 import zero_cache
 
 WRITE_FUNCTIONS = {
-    'double' : zero_cache.Client.WriteDouble,
-    'long' : zero_cache.Client.WriteLong
+    'double' : zero_cache.TypedClient.WriteDouble,
+    'long' : zero_cache.TypedClient.WriteLong
 }
 
 CONVERSION_FUNCTIONS = {
@@ -29,7 +29,7 @@ def write_value(client, index, value):
 
 def main():
     parse_args()
-    client = zero_cache.Client(ARGS.log)
+    client = zero_cache.TypedClient(ARGS.log)
     value = CONVERSION_FUNCTIONS[ARGS.type](ARGS.value)
     write_value(client, ARGS.index, value)
 
